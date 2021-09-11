@@ -1,0 +1,29 @@
+{
+  "name": "anti-thread",
+  "version": "1.0.0",
+  "description": "Anti-thread est un bot Discord qui permet d´assurer la protection de votre serveur contre la création de threads.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Evaninoo/anti-thread.git"
+  },
+  "keywords": [
+    "thread",
+    "discord",
+    "antiraid",
+    "bot"
+  ],
+  "author": "Evaninoo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Evaninoo/anti-thread/issues"
+  },
+  "homepage": "https://github.com/Evaninoo/anti-thread#readme",
+  "dependencies": {
+    "discord.js": "^13.1.0",
+    "moment-timezone": "^0.5.33"
+  }
+}
