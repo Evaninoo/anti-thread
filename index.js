@@ -5,6 +5,13 @@ const moment = require('moment-timezone');
 const time = moment.tz(Date.now(), "Europe/Paris").format("HH:mm:ss");
 const { token, owners } = require('./config.js');
 
+/*
+    Evaninoo - 2021
+    Discord : Evaninoo#1305
+    Website : https://evaninoo.com
+    GitHub: https://github.com/Evaninoo
+*/
+
 ///* [Event emitted when the bot is ready] *///
 client.on('ready', () => {
     ///* [Log when the bot is ready] *///
