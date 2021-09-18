@@ -1,6 +1,6 @@
 ///* [Define variables] *///
 const { Client, Intents } = require('discord.js');
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS]});
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_MESSAGES]});
 const moment = require('moment-timezone');
 const { token, owners } = require('./config.js');
 
@@ -8,7 +8,8 @@ const { token, owners } = require('./config.js');
     Evaninoo - 2021
     Discord : Evaninoo#1305
     Website : https://evaninoo.com
-    GitHub: https://github.com/Evaninoo
+    GitHub  : https://github.com/Evaninoo
+    Contributors : ImLorio
 */
 
 ///* [Event emitted when the bot is ready] *///
@@ -30,6 +31,18 @@ client.on('threadCreate', async thread => {
         let owner = await client.users.fetch(deleted.ownerId);
         console.log(`[${time}] [🧬] Thread deleted : ${deleted.name}, ⭐️ Owner : ${owner.tag} (${owner.id}).`);
     });
+});
+
+///* [Event emitted when message is created] *///
+client.on('messageCreate', async message => {
+    ///* [If the user is an owner] *///
+    if (owners.includes(message.author.id)) return;
+
+    ///* [If the message is the created thread message] *///
+    if (message.type === "THREAD_CREATED") {} else return;
+    
+    ///* [Delete the message when thread is created] *///
+    if (message.deletable) message.delete()
 });
 
 client.login(token);
